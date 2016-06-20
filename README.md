@@ -1,7 +1,7 @@
 
-# SuperCollider implementation for Geometric Multi-parameter Space Exploration
+# SuperCollider script to perform parameter exploration together with the Geometric Multi-parameter Space Exploration interface "GeMuSE"
 
-This script is a SuperCollider implementation that, together with the Geometric Multi-parameter Space Exploration interface ( GeMuSE, located at: https://github.com/laliki/GeMuSe ) allows the perceptual exploration of the parameter space of an algorithmic system (in this case stored at Ndef(\x,{}) ).
+This script is a SuperCollider implementation that, together with the Geometric Multi-parameter Space Exploration interface ( GeMuSE, located at: https://github.com/laliki/GeMuSe ) allows the perceptual exploration of the parameter space of an algorithmic system (in this case stored at Ndef(\x,{object}) ).
 
 Parameter space is understood as the set of all possible parameter combinations, of an algorithmic composition system, that determine the aural space created by the system.
 By perceptual exploration I refer to the process of audition and subjective classification performed by the performer/composer/user by changing the parameter values of an algorithmic system.
