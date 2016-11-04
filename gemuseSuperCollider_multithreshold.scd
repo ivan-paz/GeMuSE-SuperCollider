@@ -1,4 +1,5 @@
 // Algorithmic system to be explored
+s.boot
 (
 Ndef(\x,{
 	arg freq, freq2, amp;
@@ -67,18 +68,39 @@ Ndef(\x).stop
 
 
 //  import compression functions
-loadRelative("compress_subspaces_function.scd");
-loadRelative("extra_functions.scd");
+"/home/ivan/documents/ia/par_by_par_compression_algorithm/GeMuSE-SuperCollider/rule_extraction_function.scd".load;
 
-(
+//"/home/ivan/documents/ia/par_by_par_compression_algorithm/GeMuSE-SuperCollider/extra_functions.scd".load;
+
+
+//--------------------------------------------------
+//             set intervals and threshold for
+//                     each parameter
+//-------------------------------------------------
+(~intervals_and_distances = [
+      [
+              [ [0,inf],  1000 ]
+      ],
+      [
+              [ [0,inf],  1000 ]
+      ],
+	  [
+		  [ [0, inf],  1]
+	  ]
+])
+
+
 //  Extract rules
 ~cleanedData = ~cleanProcessingData.value(~data);
-~acceptableDifference = ~maxParametersRange.value(~cleanedData);
-~classes = ~countClasses.value(~cleanedData);
-~rules = ~uncompletedClassesCompression.value(~cleanedData,~classes);
+//~acceptableDifference = ~maxParametersRange.value(~cleanedData);
+//~classes = ~countClasses.value(~cleanedData);
+//~rules = ~uncompletedClassesCompression.value(~cleanedData,~classes);
+~cleanedData.do{|x| x.postln};
+~rules = ~subsetsCompression.value(~cleanedData,~intervals_and_distances);
+
 ~bag = ~bagOfRules_uncompleted.value(~rules);
 ~split = ~splitRules_uncompleted.value(~bag);
-)
+
 
 
 //   Rules for each class are stored in ~split
@@ -86,8 +108,7 @@ loadRelative("extra_functions.scd");
 //   Check the extracted rules
 (
 ~split.do{ arg class;
-	class.do{ arg rule;
-		rule.postln}
+	class.do{arg rule; rule.postln}
 })
 
 
