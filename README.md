@@ -11,7 +11,7 @@ The exploring-parameters algorithm is used to compress the data into if-then rul
 
 ## Multi-threshold compression
 Alternatively, it is possible to use, for each parameter, different thresholds for different intervals. This functionality allow to control the ammount of variation among the values inside the rules depending on the range of the parameter that they describe.
-This is done with the gemuseSuperCollider\_multithreshold.scd script. In the following code, for hypotetical parameters 1 and 2 the compression thresholds are set as follows: For parameter 1 from 0 to inf the threshold is set equal to 1000. For parameter 2 from 0 to 10 the threshold is set to 5, while from 10 to inf the threshold has been set to 200. It is possible to define as many thresholds and intervals as we want. 
+This is done with the gemuseSuperCollider\_multithreshold.scd script. In the following code, for hypotetical parameters 1 and 2 the compression thresholds are set as follows: For parameter 1 in the interval [0 to inf) the threshold is set to 1000. For parameter 2 in the interval [0,10] the threshold is set to 5, while in (10 to inf) the threshold has been set to 200. It is possible to define as many thresholds and intervals as we want. 
 ```
 ~intervals_and_distances = [
       [
