@@ -19,7 +19,7 @@ A threshold is the maximum distance between two parameter values for they to be 
 
 This functionality allow us to control the ammount of variation among the values contained in the rules, according to the established ranges for each parameter.
 
-This is done with the gemuseSuperCollider\_multithreshold.scd script. In the following code, for hypotetical parameters 1 and 2 the compression thresholds are set as follows: For parameter 1 in the interval [0 to inf) the threshold is set to 1000. For parameter 2 in the interval [0,10] the threshold is set to 5, while in (10 to inf) the threshold has been set to 200. It is possible to define as many thresholds and intervals as we want. 
+This is done with the gemuseSuperCollider\_multithreshold.scd script. In the following code, for hypotetical parameters 1 and 2, the compression thresholds are set as follows: For parameter 1 in the interval [0 to inf) the threshold is set to 1000. For parameter 2 in the interval [0,10] the threshold is set to 5, while in (10 to inf) the threshold has been set to 200. It is possible to define as many thresholds and intervals as we want.
 ```
 ~intervals_and_distances = [
       [
