@@ -8,3 +8,21 @@ By perceptual exploration I refer to the process of audition and subjective clas
 
 During the exploration the user classify the combinations of parameters into perceptual classes. These could be, for example, outputs that can be used for different parts of a musical piece. Then, the parameter sets, together with the perceptual user evaluation, are considered as input/output relations. Such relations are processed, iteratively searching for regularities and thereby compressing the data to extract human readable and interpretable (if-then) rules able to represent musical entities of low and high-level. This process is carried out by the exploring-parameters algorithm (implemented in SuperCollider by Iván Paz and Julian Rohrhuber and available at https://github.com/musikinformatik/exploring-parameters ).
 The exploring-parameters algorithm is used to compress the data into if-then rules that are used in a generative form throughout a simple Tdef.
+
+## Multi-threshold compression
+Alternatively, it is possible to use, for each parameter, different thresholds for different intervals. This functionality allow to control the ammount of variation among the values inside the rules depending on the range of the parameter that they describe.
+This is done with the gemuseSuperCollider\_multithreshold.scd script. In the following code, 
+```
+~intervals_and_distances = [
+      [
+
+              [ [0, inf],  1000]
+
+      ],
+
+      [
+
+              [ [0, 10], 5 ], [ [10, inf], 20 ]
+      ]
+])
+```
