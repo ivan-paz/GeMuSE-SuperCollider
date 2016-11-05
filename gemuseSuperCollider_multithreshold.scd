@@ -91,16 +91,12 @@ Ndef(\x).stop
 
 
 //  Extract rules
+(
 ~cleanedData = ~cleanProcessingData.value(~data);
-//~acceptableDifference = ~maxParametersRange.value(~cleanedData);
-//~classes = ~countClasses.value(~cleanedData);
-//~rules = ~uncompletedClassesCompression.value(~cleanedData,~classes);
-~cleanedData.do{|x| x.postln};
 ~rules = ~subsetsCompression.value(~cleanedData,~intervals_and_distances);
-
 ~bag = ~bagOfRules_uncompleted.value(~rules);
 ~split = ~splitRules_uncompleted.value(~bag);
-
+)
 
 
 //   Rules for each class are stored in ~split
